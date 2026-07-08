@@ -92,6 +92,7 @@
   gsap.utils.toArray(".stat__n").forEach(function (el) {
     var target = parseInt(el.getAttribute("data-count"), 10);
     var obj = { v: 0 };
+    el.textContent = "0"; // start from 0 only when the counter will actually animate
     gsap.to(obj, {
       v: target, duration: 1.4, ease: "power2.out",
       scrollTrigger: { trigger: el, start: "top 88%", once: true },
